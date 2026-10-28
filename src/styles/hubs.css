@@ -1,0 +1,77 @@
+/* Campus Area Hubs */
+.campus-hubs-section {
+  background-color: var(--color-surface);
+  padding-top: 3rem;
+  padding-bottom: 3rem;
+  border-top: 1px solid rgba(196, 198, 207, 0.2);
+}
+
+.hubs-header {
+  text-align: center;
+  max-width: 36rem;
+  margin: 0 auto 2rem;
+}
+
+.hubs-title {
+  font-family: var(--font-display);
+  font-size: 1.25rem; /* 20px */
+  font-weight: 600;
+  color: var(--color-on-surface);
+}
+
+.hubs-subtitle {
+  font-family: var(--font-body);
+  font-size: 13px;
+  color: var(--color-on-surface-variant);
+  margin-top: 0.25rem;
+}
+
+.hubs-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 1rem;
+}
+
+@media (min-width: 768px) {
+  .hubs-grid {
+    grid-template-columns: repeat(4, 1fr);
+  }
+}
+
+.hub-card {
+  padding: 1.25rem;
+  border-radius: var(--radius-xl);
+  background-color: var(--color-surface-container-lowest);
+  border: 1px solid rgba(196, 198, 207, 0.2);
+  transition: all 0.2s ease;
+  cursor: pointer;
+}
+
+.hub-card:hover {
+  background-color: var(--color-surface-container);
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(11, 37, 69, 0.06);
+}
+
+.hub-title {
+  font-family: var(--font-display);
+  font-size: 16px;
+  font-weight: 700;
+  color: var(--color-primary);
+  margin-bottom: 0.25rem;
+}
+
+.hub-desc {
+  font-family: var(--font-body);
+  font-size: 13px;
+  color: var(--color-on-surface-variant);
+}
+
+.hub-badge {
+  display: inline-block;
+  margin-top: 0.625rem;
+  font-family: var(--font-display);
+  font-size: 12px;
+  font-weight: 600;
+  color: var(--color-on-secondary-container);
+}

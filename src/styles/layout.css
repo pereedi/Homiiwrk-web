@@ -1,0 +1,208 @@
+/* Layout & Header */
+.container {
+  width: 100%;
+  max-width: 80rem; /* 1280px / 7xl */
+  margin-left: auto;
+  margin-right: auto;
+  padding-left: var(--margin);
+  padding-right: var(--margin);
+}
+
+@media (min-width: 1024px) {
+  .container {
+    padding-left: var(--margin-lg);
+    padding-right: var(--margin-lg);
+  }
+}
+
+/* Header Navbar */
+.site-header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  width: 100%;
+  height: 4rem; /* 64px */
+  z-index: 50;
+  background-color: rgba(255, 255, 255, 0.95);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border-bottom: 1px solid rgba(196, 198, 207, 0.3);
+  box-shadow: 0 1px 8px rgba(11, 37, 69, 0.04);
+}
+
+.header-inner {
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.brand-logo-link {
+  display: flex;
+  align-items: center;
+  gap: 0.625rem;
+  border-radius: var(--radius-md);
+  transition: opacity 0.2s ease;
+}
+
+.brand-logo-link:hover {
+  opacity: 0.9;
+}
+
+.brand-logo-img {
+  height: 1.75rem;
+  width: auto;
+  object-fit: contain;
+}
+
+/* Desktop Navigation */
+.desktop-nav {
+  display: none;
+  align-items: center;
+  gap: var(--space-lg);
+}
+
+@media (min-width: 768px) {
+  .desktop-nav {
+    display: flex;
+  }
+}
+
+.nav-link {
+  font-family: var(--font-display);
+  font-size: 14px;
+  font-weight: 600;
+  color: var(--color-on-surface-variant);
+  padding: 0.25rem 0;
+  transition: color 0.2s ease;
+  position: relative;
+}
+
+.nav-link:hover,
+.nav-link.active {
+  color: var(--color-primary);
+}
+
+.nav-link.active::after {
+  content: '';
+  position: absolute;
+  bottom: -2px;
+  left: 0;
+  right: 0;
+  height: 2px;
+  background-color: var(--color-secondary);
+  border-radius: var(--radius-full);
+}
+
+/* Header Actions */
+.header-actions {
+  display: flex;
+  align-items: center;
+  gap: var(--space-md);
+}
+
+.btn-sign-in {
+  display: none;
+  align-items: center;
+  justify-content: center;
+  padding: 0.5rem 1rem;
+  border-radius: var(--radius-full);
+  background-color: var(--color-primary-container);
+  color: var(--color-on-primary);
+  font-family: var(--font-display);
+  font-size: 14px;
+  font-weight: 600;
+  transition: all 0.2s ease;
+  box-shadow: 0 2px 4px rgba(11, 37, 69, 0.12);
+}
+
+@media (min-width: 640px) {
+  .btn-sign-in {
+    display: inline-flex;
+  }
+}
+
+.btn-sign-in:hover {
+  background-color: var(--color-primary);
+  transform: translateY(-1px);
+}
+
+.mobile-menu-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0.5rem;
+  border-radius: var(--radius-md);
+  color: var(--color-on-surface-variant);
+  background-color: transparent;
+  transition: background-color 0.2s ease, color 0.2s ease;
+}
+
+@media (min-width: 768px) {
+  .mobile-menu-btn {
+    display: none;
+  }
+}
+
+.mobile-menu-btn:hover {
+  background-color: var(--color-surface-container);
+  color: var(--color-on-surface);
+}
+
+/* Mobile Drawer */
+.mobile-drawer {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-xs);
+  background-color: var(--color-surface-container-lowest);
+  border-bottom: 1px solid rgba(196, 198, 207, 0.3);
+  padding: var(--space-md) var(--margin);
+  box-shadow: var(--shadow-lg);
+  animation: slideDown 0.2s ease-out;
+}
+
+@keyframes slideDown {
+  from {
+    opacity: 0;
+    transform: translateY(-8px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.mobile-nav-link {
+  padding: 0.625rem 0.75rem;
+  border-radius: var(--radius-md);
+  font-family: var(--font-display);
+  font-size: 14px;
+  font-weight: 600;
+  color: var(--color-on-surface-variant);
+  transition: background-color 0.2s ease, color 0.2s ease;
+}
+
+.mobile-nav-link:hover,
+.mobile-nav-link.active {
+  background-color: var(--color-surface-container);
+  color: var(--color-primary);
+}
+
+.mobile-drawer-bottom {
+  padding-top: 0.5rem;
+  margin-top: 0.5rem;
+  border-top: 1px solid rgba(196, 198, 207, 0.2);
+}
+
+.mobile-drawer-bottom .btn-sign-in {
+  display: flex;
+  width: 100%;
+}
+
+/* Main Container */
+.main-content {
+  width: 100%;
+  padding-top: 4rem; /* match header height */
+  min-height: calc(100vh - 280px);
+}
