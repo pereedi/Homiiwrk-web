@@ -1,0 +1,216 @@
+/* =====================================================================
+   HOW HOMIIWRK WORKS — LANDING PAGE SECTION
+   ===================================================================== */
+.how-it-works-section {
+  padding: 4.5rem 0;
+  background: linear-gradient(180deg, #f8fafc 0%, #ffffff 100%);
+  border-top: 1px solid var(--color-outline-variant);
+  border-bottom: 1px solid var(--color-outline-variant);
+  scroll-margin-top: 84px;
+}
+
+.hiw-header {
+  text-align: center;
+  max-width: 680px;
+  margin: 0 auto 3rem;
+}
+
+.hiw-eyebrow {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  background: #ecfdf5;
+  color: #047857;
+  border: 1px solid #a7f3d0;
+  font-size: 0.78rem;
+  font-weight: 700;
+  padding: 0.35rem 0.9rem;
+  border-radius: 999px;
+  margin-bottom: 0.9rem;
+}
+
+.hiw-title {
+  font-size: clamp(1.75rem, 3vw, 2.35rem);
+  font-weight: 800;
+  color: var(--color-on-surface);
+  letter-spacing: -0.02em;
+  margin: 0 0 0.75rem;
+}
+
+.hiw-subtitle {
+  font-size: 1rem;
+  color: var(--color-on-surface-variant);
+  line-height: 1.6;
+  margin: 0;
+}
+
+.hiw-steps-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 1.25rem;
+  margin-bottom: 2.5rem;
+}
+
+@media (max-width: 1024px) {
+  .hiw-steps-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 600px) {
+  .hiw-steps-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+.hiw-step-card {
+  background: #ffffff;
+  border: 1px solid var(--color-outline-variant);
+  border-radius: var(--radius-xl);
+  padding: 1.5rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.6rem;
+  box-shadow: 0 4px 16px rgba(0, 16, 38, 0.04);
+  transition: transform 0.2s ease, border-color 0.2s ease, box-shadow 0.2s ease;
+}
+
+.hiw-step-card:hover {
+  transform: translateY(-3px);
+  border-color: var(--color-primary);
+  box-shadow: 0 10px 28px rgba(0, 16, 38, 0.08);
+}
+
+.hiw-step-top {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 0.25rem;
+}
+
+.hiw-step-icon {
+  width: 46px;
+  height: 46px;
+  border-radius: 12px;
+  background: #eff6ff;
+  color: var(--color-primary);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.hiw-step-number {
+  font-size: 1.4rem;
+  font-weight: 800;
+  color: #cbd5e1;
+  letter-spacing: -0.02em;
+}
+
+.hiw-step-badge {
+  align-self: flex-start;
+  font-size: 0.72rem;
+  font-weight: 700;
+  color: #0369a1;
+  background: #e0f2fe;
+  padding: 0.2rem 0.65rem;
+  border-radius: 999px;
+}
+
+.hiw-step-title {
+  font-size: 1.05rem;
+  font-weight: 800;
+  color: var(--color-on-surface);
+  margin: 0.15rem 0 0;
+  line-height: 1.35;
+}
+
+.hiw-step-desc {
+  font-size: 0.88rem;
+  color: var(--color-on-surface-variant);
+  line-height: 1.6;
+  margin: 0;
+}
+
+.hiw-cta-bar {
+  background: var(--color-primary);
+  color: #ffffff;
+  border-radius: var(--radius-xl);
+  padding: 1.75rem 2rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1.5rem;
+  flex-wrap: wrap;
+}
+
+.hiw-cta-copy {
+  display: flex;
+  flex-direction: column;
+  gap: 0.3rem;
+  max-width: 540px;
+}
+
+.hiw-cta-copy strong {
+  font-size: 1.15rem;
+  font-weight: 800;
+}
+
+.hiw-cta-copy span {
+  font-size: 0.88rem;
+  color: rgba(255, 255, 255, 0.82);
+}
+
+.hiw-cta-actions {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  flex-wrap: wrap;
+}
+
+.hiw-btn-primary {
+  background: #10b981;
+  color: #ffffff;
+  border: none;
+  padding: 0.7rem 1.25rem;
+  border-radius: 999px;
+  font-size: 0.88rem;
+  font-weight: 700;
+  cursor: pointer;
+  transition: background 0.2s ease;
+}
+
+.hiw-btn-primary:hover {
+  background: #059669;
+}
+
+.hiw-btn-secondary {
+  background: #ffffff;
+  color: var(--color-primary);
+  border: none;
+  padding: 0.7rem 1.25rem;
+  border-radius: 999px;
+  font-size: 0.88rem;
+  font-weight: 700;
+  cursor: pointer;
+  transition: opacity 0.2s ease;
+}
+
+.hiw-btn-secondary:hover {
+  opacity: 0.92;
+}
+
+.hiw-btn-ghost {
+  background: transparent;
+  color: #ffffff;
+  border: 1.5px solid rgba(255, 255, 255, 0.35);
+  padding: 0.68rem 1.15rem;
+  border-radius: 999px;
+  font-size: 0.88rem;
+  font-weight: 700;
+  cursor: pointer;
+  transition: background 0.2s ease;
+}
+
+.hiw-btn-ghost:hover {
+  background: rgba(255, 255, 255, 0.12);
+}

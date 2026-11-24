@@ -1,0 +1,53 @@
+# =====================================================================
+# HOMIIWRK — ROOT .gitignore (Security & Clean Repo Rules)
+# =====================================================================
+
+# Environment variables & secrets (NEVER commit real keys/passwords)
+.env
+.env.*
+**/.env
+**/.env.*
+!.env.example
+!**/.env.example
+
+# Private keys & certificates
+*.pem
+*.key
+*.crt
+
+# Dependencies
+node_modules/
+**/node_modules/
+
+# Production build outputs & caches
+dist/
+**/dist/
+build/
+**/build/
+.vite/
+**/.vite/
+
+# Private runtime user data & uploaded files
+backend/data/users.json
+backend/data/chats.json
+backend/data/listings.json
+backend/uploads/
+
+# Logs
+*.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+
+# OS & Editor clutter
+.DS_Store
+Thumbs.db
+.vscode/*
+!.vscode/extensions.json
+.idea/
+*.suo
+*.ntvs*
+*.njsproj
+*.sln
+*.sw?

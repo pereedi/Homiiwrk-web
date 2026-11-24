@@ -1,0 +1,23 @@
+{
+  "name": "homiiwrk-server",
+  "version": "1.0.0",
+  "description": "Homiiwrk Marketplace & Lydia AI Concierge Backend",
+  "main": "index.js",
+  "type": "module",
+  "scripts": {
+    "start": "node index.js",
+    "dev": "node --watch index.js"
+  },
+  "dependencies": {
+    "@supabase/server": "^1.9.2",
+    "@supabase/supabase-js": "^2.119.0",
+    "cloudinary": "^2.11.0",
+    "cors": "^2.8.5",
+    "dotenv": "^16.4.7",
+    "express": "^4.21.2",
+    "express-rate-limit": "^7.5.0",
+    "nodemailer": "^10.6.0",
+    "openai": "^4.85.4",
+    "pg": "^8.13.3"
+  }
+}

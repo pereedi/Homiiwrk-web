@@ -1,0 +1,14 @@
+# Environment variables & secrets
+.env
+.env.*
+!.env.example
+
+# Dependencies & Build outputs
+node_modules/
+dist/
+.vite/
+
+# Logs & OS files
+*.log
+.DS_Store
+Thumbs.db

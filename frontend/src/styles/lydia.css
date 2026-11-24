@@ -1,0 +1,954 @@
+/* =====================================================================
+   HOMIIWRK LYDIA AI CONCIERGE & MATCHING SYSTEM STYLES
+   Aesthetic: Emerald Medical Luxury & Deep Slate Glassmorphism
+   ===================================================================== */
+
+:root {
+  --lydia-primary: #059669;
+  --lydia-primary-dark: #047857;
+  --lydia-primary-light: #d1fae5;
+  --lydia-accent: #10b981;
+  --lydia-navy: #0f172a;
+  --lydia-slate: #334155;
+  --lydia-muted: #64748b;
+  --lydia-bg-light: #f8fafc;
+  --lydia-card-border: #e2e8f0;
+  --lydia-gold: #d97706;
+  --lydia-whatsapp: #25d366;
+  --lydia-whatsapp-dark: #128c7e;
+  --lydia-radius: 16px;
+  --lydia-radius-sm: 10px;
+  --lydia-shadow-sm: 0 4px 12px rgba(15, 23, 42, 0.05);
+  --lydia-shadow-md: 0 8px 24px rgba(15, 23, 42, 0.08);
+  --lydia-shadow-lg: 0 16px 40px rgba(15, 23, 42, 0.12);
+}
+
+/* ---------------------------------------------------------------------
+   1. CONCIERGE WORKSPACE WRAPPER
+   --------------------------------------------------------------------- */
+.lydia-workspace {
+  display: grid;
+  grid-template-columns: 1fr 340px;
+  gap: 24px;
+  min-height: 640px;
+  max-width: 1240px;
+  margin: 0 auto;
+  align-items: stretch;
+}
+
+@media (max-width: 960px) {
+  .lydia-workspace {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* ---------------------------------------------------------------------
+   2. MAIN CHAT CONTAINER
+   --------------------------------------------------------------------- */
+.lydia-chat-card {
+  background: #ffffff;
+  border: 1px solid var(--lydia-card-border);
+  border-radius: var(--lydia-radius);
+  box-shadow: var(--lydia-shadow-md);
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+  height: 700px;
+}
+
+/* Chat Header */
+.lydia-chat-header {
+  padding: 18px 24px;
+  background: linear-gradient(135deg, #0f172a 0%, #1e293b 100%);
+  color: #ffffff;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.lydia-avatar-wrap {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+}
+
+.lydia-avatar {
+  width: 46px;
+  height: 46px;
+  border-radius: 50%;
+  background: linear-gradient(135deg, #059669 0%, #10b981 100%);
+  color: #ffffff;
+  font-weight: 700;
+  font-size: 1.15rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 4px 12px rgba(16, 185, 129, 0.35);
+  position: relative;
+  flex-shrink: 0;
+}
+
+.lydia-status-dot {
+  position: absolute;
+  bottom: 1px;
+  right: 1px;
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  background: #22c55e;
+  border: 2px solid #0f172a;
+}
+
+.lydia-meta h3 {
+  margin: 0;
+  font-size: 1.05rem;
+  font-weight: 700;
+  letter-spacing: -0.01em;
+  color: #ffffff;
+}
+
+.lydia-meta p {
+  margin: 2px 0 0 0;
+  font-size: 0.78rem;
+  color: #94a3b8;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.lydia-badge-lasucom {
+  background: rgba(16, 185, 129, 0.16);
+  color: #6ee7b7;
+  padding: 2px 8px;
+  border-radius: 20px;
+  font-size: 0.7rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+}
+
+/* Chat Messages Scrollable Area */
+.lydia-messages-area {
+  flex: 1;
+  overflow-y: auto;
+  padding: 24px;
+  background: #f8fafc;
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+}
+
+.lydia-msg-row {
+  display: flex;
+  gap: 12px;
+  max-width: 88%;
+}
+
+.lydia-msg-row.assistant {
+  align-self: flex-start;
+}
+
+.lydia-msg-row.user {
+  align-self: flex-end;
+  flex-direction: row-reverse;
+}
+
+.lydia-msg-avatar {
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  background: #059669;
+  color: #ffffff;
+  font-size: 0.85rem;
+  font-weight: 700;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  margin-top: 4px;
+}
+
+.lydia-msg-avatar.user-avatar {
+  background: #3b82f6;
+}
+
+.lydia-msg-bubble {
+  padding: 14px 18px;
+  border-radius: 18px;
+  font-size: 0.92rem;
+  line-height: 1.55;
+  color: #1e293b;
+  position: relative;
+  word-break: break-word;
+}
+
+.lydia-msg-row.assistant .lydia-msg-bubble {
+  background: #ffffff;
+  border: 1px solid #e2e8f0;
+  border-top-left-radius: 4px;
+  box-shadow: 0 2px 8px rgba(15, 23, 42, 0.04);
+}
+
+.lydia-msg-row.user .lydia-msg-bubble {
+  background: #0f172a;
+  color: #ffffff;
+  border-top-right-radius: 4px;
+}
+
+.lydia-msg-time {
+  font-size: 0.7rem;
+  color: #94a3b8;
+  margin-top: 6px;
+  text-align: right;
+}
+
+/* Typing Indicator */
+.lydia-typing-indicator {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  padding: 10px 14px;
+}
+
+.lydia-typing-dot {
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: #059669;
+  animation: lydiaBounce 1.4s infinite ease-in-out both;
+}
+
+.lydia-typing-dot:nth-child(1) { animation-delay: -0.32s; }
+.lydia-typing-dot:nth-child(2) { animation-delay: -0.16s; }
+
+@keyframes lydiaBounce {
+  0%, 80%, 100% { transform: scale(0); opacity: 0.4; }
+  40% { transform: scale(1); opacity: 1; }
+}
+
+/* Quick Suggestion Chips */
+.lydia-suggestions-bar {
+  padding: 12px 20px;
+  background: #ffffff;
+  border-top: 1px solid #f1f5f9;
+  display: flex;
+  gap: 8px;
+  overflow-x: auto;
+  white-space: nowrap;
+}
+
+.lydia-chip-btn {
+  background: #f1f5f9;
+  border: 1px solid #e2e8f0;
+  color: #334155;
+  font-size: 0.8rem;
+  font-weight: 500;
+  padding: 6px 14px;
+  border-radius: 20px;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  flex-shrink: 0;
+}
+
+.lydia-chip-btn:hover {
+  background: var(--lydia-primary-light);
+  border-color: var(--lydia-primary);
+  color: var(--lydia-primary-dark);
+}
+
+/* Chat Input Bar */
+.lydia-input-bar {
+  padding: 16px 20px;
+  background: #ffffff;
+  border-top: 1px solid #e2e8f0;
+  display: flex;
+  gap: 12px;
+  align-items: center;
+}
+
+.lydia-input-field {
+  flex: 1;
+  background: #f8fafc;
+  border: 1px solid #cbd5e1;
+  border-radius: 24px;
+  padding: 12px 20px;
+  font-size: 0.92rem;
+  color: #0f172a;
+  outline: none;
+  transition: border-color 0.2s ease, box-shadow 0.2s ease;
+}
+
+.lydia-input-field:focus {
+  border-color: #059669;
+  box-shadow: 0 0 0 3px rgba(5, 150, 105, 0.12);
+  background: #ffffff;
+}
+
+.lydia-send-btn {
+  background: linear-gradient(135deg, #059669 0%, #047857 100%);
+  color: #ffffff;
+  border: none;
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: transform 0.15s ease, box-shadow 0.2s ease;
+  flex-shrink: 0;
+  box-shadow: 0 4px 12px rgba(5, 150, 105, 0.3);
+}
+
+.lydia-send-btn:hover:not(:disabled) {
+  transform: translateY(-1px);
+  box-shadow: 0 6px 16px rgba(5, 150, 105, 0.4);
+}
+
+.lydia-send-btn:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+/* ---------------------------------------------------------------------
+   3. IN-CHAT INTERACTIVE CARDS (Listings, Upgrades, Roommates)
+   --------------------------------------------------------------------- */
+.lydia-cards-container {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  margin-top: 10px;
+}
+
+/* In-Chat Listing Card */
+.lydia-listing-card {
+  background: #ffffff;
+  border: 1px solid #e2e8f0;
+  border-radius: 12px;
+  padding: 12px;
+  display: grid;
+  grid-template-columns: 90px 1fr auto;
+  gap: 14px;
+  align-items: center;
+  box-shadow: 0 2px 8px rgba(15, 23, 42, 0.04);
+  transition: transform 0.15s ease, border-color 0.15s ease;
+}
+
+.lydia-listing-card:hover {
+  transform: translateY(-2px);
+  border-color: #059669;
+}
+
+.lydia-listing-thumb {
+  width: 90px;
+  height: 75px;
+  border-radius: 8px;
+  object-fit: cover;
+  background: #e2e8f0;
+}
+
+.lydia-listing-info h4 {
+  margin: 0;
+  font-size: 0.92rem;
+  font-weight: 700;
+  color: #0f172a;
+}
+
+.lydia-listing-info p {
+  margin: 3px 0;
+  font-size: 0.78rem;
+  color: #64748b;
+}
+
+.lydia-listing-perks {
+  display: flex;
+  gap: 6px;
+  flex-wrap: wrap;
+  margin-top: 4px;
+}
+
+.lydia-perk-pill {
+  font-size: 0.7rem;
+  background: #f1f5f9;
+  color: #334155;
+  padding: 2px 6px;
+  border-radius: 4px;
+}
+
+.lydia-listing-action {
+  text-align: right;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  gap: 6px;
+}
+
+.lydia-listing-price {
+  font-size: 0.95rem;
+  font-weight: 800;
+  color: #059669;
+}
+
+.lydia-btn-inspect {
+  background: #0f172a;
+  color: #ffffff;
+  border: none;
+  font-size: 0.75rem;
+  font-weight: 600;
+  padding: 6px 12px;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: background 0.2s ease;
+}
+
+.lydia-btn-inspect:hover {
+  background: #059669;
+}
+
+/* Header New Chat Button */
+.lydia-clear-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  background: rgba(255, 255, 255, 0.12);
+  color: #e2e8f0;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  padding: 5px 10px;
+  border-radius: 999px;
+  font-size: 0.72rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.lydia-clear-btn:hover {
+  background: rgba(255, 255, 255, 0.22);
+  color: #ffffff;
+}
+
+/* Properly Arranged In-Chat Listing Results (Drawer & Full Page Responsive) */
+.lydia-listings-wrapper {
+  margin-top: 12px;
+}
+
+.lydia-listings-summary-bar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 8px;
+  font-size: 0.74rem;
+  font-weight: 700;
+  color: #334155;
+  padding: 6px 10px;
+  background: #f1f5f9;
+  border-radius: 8px;
+  margin-bottom: 10px;
+}
+
+.lydia-sort-tag {
+  font-size: 0.68rem;
+  font-weight: 600;
+  color: #059669;
+  background: #ecfdf5;
+  border: 1px solid #a7f3d0;
+  padding: 2px 8px;
+  border-radius: 999px;
+}
+
+.lydia-listing-card-v2 {
+  background: #ffffff;
+  border: 1px solid #e2e8f0;
+  border-radius: 12px;
+  padding: 12px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  box-shadow: 0 2px 8px rgba(15, 23, 42, 0.04);
+  transition: transform 0.15s ease, border-color 0.15s ease, box-shadow 0.15s ease;
+}
+
+.lydia-listing-card-v2:hover {
+  transform: translateY(-1px);
+  border-color: #059669;
+  box-shadow: 0 6px 16px rgba(15, 23, 42, 0.08);
+}
+
+.lydia-card-top {
+  display: flex;
+  gap: 12px;
+  align-items: flex-start;
+}
+
+.lydia-listing-thumb-v2 {
+  width: 82px;
+  height: 76px;
+  border-radius: 8px;
+  object-fit: cover;
+  background: #e2e8f0;
+  flex-shrink: 0;
+}
+
+.lydia-listing-info-v2 {
+  flex: 1;
+  min-width: 0;
+}
+
+.lydia-card-badges {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  margin-bottom: 3px;
+}
+
+.lydia-card-index {
+  font-size: 0.66rem;
+  font-weight: 800;
+  color: #ffffff;
+  background: #0f172a;
+  padding: 1px 6px;
+  border-radius: 4px;
+}
+
+.lydia-card-cat {
+  font-size: 0.68rem;
+  font-weight: 700;
+  color: #0369a1;
+  background: #e0f2fe;
+  padding: 1px 7px;
+  border-radius: 999px;
+}
+
+.lydia-card-title-v2 {
+  margin: 0;
+  font-size: 0.88rem;
+  font-weight: 700;
+  color: #0f172a;
+  line-height: 1.3;
+}
+
+.lydia-card-loc-v2 {
+  margin: 3px 0 0;
+  font-size: 0.74rem;
+  color: #64748b;
+  line-height: 1.3;
+}
+
+.lydia-card-footer-v2 {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 10px;
+  padding-top: 8px;
+  border-top: 1px solid #f1f5f9;
+  flex-wrap: wrap;
+}
+
+.lydia-agency-note {
+  font-size: 0.7rem;
+  color: #475569;
+  font-weight: 600;
+}
+
+/* In-Chat Upgrade Highlight Card */
+.lydia-upgrade-card {
+  background: linear-gradient(135deg, #f0fdf4 0%, #ecfdf5 100%);
+  border: 1px solid #a7f3d0;
+  border-radius: 12px;
+  padding: 14px 16px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+}
+
+.lydia-upgrade-title {
+  font-weight: 700;
+  font-size: 0.88rem;
+  color: #065f46;
+  margin: 0 0 4px 0;
+}
+
+.lydia-upgrade-desc {
+  font-size: 0.8rem;
+  color: #047857;
+  margin: 0;
+}
+
+.lydia-upgrade-delta {
+  background: #059669;
+  color: #ffffff;
+  padding: 6px 12px;
+  border-radius: 20px;
+  font-size: 0.82rem;
+  font-weight: 700;
+  white-space: nowrap;
+}
+
+/* ---------------------------------------------------------------------
+   4. SIDEBAR: PROFILE & CONTEXT INSPECTOR
+   --------------------------------------------------------------------- */
+.lydia-profile-inspector {
+  background: #ffffff;
+  border: 1px solid var(--lydia-card-border);
+  border-radius: var(--lydia-radius);
+  box-shadow: var(--lydia-shadow-md);
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+}
+
+.lydia-inspector-header {
+  border-bottom: 1px solid #f1f5f9;
+  padding-bottom: 14px;
+}
+
+.lydia-inspector-header h4 {
+  margin: 0;
+  font-size: 1rem;
+  font-weight: 700;
+  color: #0f172a;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.lydia-inspector-header p {
+  margin: 4px 0 0 0;
+  font-size: 0.78rem;
+  color: #64748b;
+}
+
+.lydia-inspector-item {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.lydia-inspector-label {
+  font-size: 0.72rem;
+  font-weight: 600;
+  color: #94a3b8;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+.lydia-inspector-val {
+  font-size: 0.9rem;
+  font-weight: 700;
+  color: #0f172a;
+}
+
+.lydia-privacy-note {
+  background: #f8fafc;
+  border-radius: 8px;
+  padding: 12px;
+  font-size: 0.75rem;
+  color: #64748b;
+  line-height: 1.45;
+  border-left: 3px solid #059669;
+  margin-top: auto;
+}
+
+/* ---------------------------------------------------------------------
+   5. ROOMMATE MATCH CARDS (Tab 2) & WHATSAPP PROTOCOL
+   --------------------------------------------------------------------- */
+.lydia-peer-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(340px, 1fr));
+  gap: 20px;
+  margin-top: 20px;
+}
+
+.lydia-peer-card {
+  background: #ffffff;
+  border: 1px solid var(--lydia-card-border);
+  border-radius: var(--lydia-radius);
+  box-shadow: var(--lydia-shadow-sm);
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+  position: relative;
+  overflow: hidden;
+}
+
+.lydia-peer-card:hover {
+  transform: translateY(-3px);
+  box-shadow: var(--lydia-shadow-md);
+  border-color: #cbd5e1;
+}
+
+.lydia-peer-top {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 12px;
+}
+
+.lydia-peer-avatar-wrap {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.lydia-peer-avatar {
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+  background: linear-gradient(135deg, #0f172a 0%, #334155 100%);
+  color: #ffffff;
+  font-weight: 700;
+  font-size: 1.1rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+.lydia-peer-details h4 {
+  margin: 0;
+  font-size: 1rem;
+  font-weight: 700;
+  color: #0f172a;
+}
+
+.lydia-peer-details p {
+  margin: 2px 0 0 0;
+  font-size: 0.8rem;
+  color: #64748b;
+}
+
+.lydia-peer-score {
+  background: #ecfdf5;
+  border: 1px solid #a7f3d0;
+  color: #065f46;
+  font-weight: 800;
+  font-size: 0.82rem;
+  padding: 4px 10px;
+  border-radius: 20px;
+  white-space: nowrap;
+}
+
+.lydia-peer-meta-list {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 10px;
+  background: #f8fafc;
+  padding: 12px;
+  border-radius: 10px;
+  font-size: 0.8rem;
+}
+
+.lydia-peer-meta-row {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+
+.lydia-peer-meta-label {
+  font-size: 0.7rem;
+  color: #94a3b8;
+  font-weight: 600;
+  text-transform: uppercase;
+}
+
+.lydia-peer-meta-val {
+  font-weight: 600;
+  color: #1e293b;
+}
+
+.lydia-peer-traits {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+}
+
+.lydia-trait-chip {
+  background: #f1f5f9;
+  color: #475569;
+  padding: 4px 10px;
+  border-radius: 16px;
+  font-size: 0.75rem;
+  font-weight: 500;
+}
+
+/* Intro & WhatsApp Button Actions */
+.lydia-peer-actions {
+  margin-top: auto;
+  padding-top: 8px;
+}
+
+.lydia-btn-intro {
+  width: 100%;
+  padding: 10px 16px;
+  border-radius: 10px;
+  font-size: 0.88rem;
+  font-weight: 600;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  transition: all 0.2s ease;
+  border: 1px solid #cbd5e1;
+  background: #ffffff;
+  color: #0f172a;
+}
+
+.lydia-btn-intro:hover {
+  background: #0f172a;
+  color: #ffffff;
+  border-color: #0f172a;
+}
+
+.lydia-btn-intro.pending {
+  background: #fffbeb;
+  border-color: #fde68a;
+  color: #b45309;
+  cursor: default;
+}
+
+.lydia-btn-whatsapp {
+  width: 100%;
+  padding: 11px 16px;
+  border-radius: 10px;
+  font-size: 0.9rem;
+  font-weight: 700;
+  background: var(--lydia-whatsapp);
+  color: #ffffff;
+  text-decoration: none;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  box-shadow: 0 4px 12px rgba(37, 211, 102, 0.3);
+  transition: background 0.2s ease, transform 0.15s ease;
+  border: none;
+}
+
+.lydia-btn-whatsapp:hover {
+  background: var(--lydia-whatsapp-dark);
+  transform: translateY(-1px);
+}
+
+/* ---------------------------------------------------------------------
+   6. GLOBAL FLOATING LYDIA CONCIERGE BUTTON (FAB)
+   --------------------------------------------------------------------- */
+.lydia-fab-trigger {
+  position: fixed;
+  bottom: 24px;
+  right: 24px;
+  z-index: 999;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  cursor: pointer;
+}
+
+.lydia-fab-bubble {
+  background: #ffffff;
+  padding: 8px 14px;
+  border-radius: 20px;
+  box-shadow: 0 6px 20px rgba(15, 23, 42, 0.14);
+  font-size: 0.82rem;
+  font-weight: 600;
+  color: #0f172a;
+  border: 1px solid #e2e8f0;
+  animation: lydiaFadeSlide 0.3s ease;
+  white-space: nowrap;
+}
+
+.lydia-fab-btn {
+  width: 58px;
+  height: 58px;
+  border-radius: 50%;
+  background: linear-gradient(135deg, #059669 0%, #047857 100%);
+  color: #ffffff;
+  border: 3px solid #ffffff;
+  box-shadow: 0 8px 24px rgba(5, 150, 105, 0.4);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.4rem;
+  font-weight: 700;
+  cursor: pointer;
+  transition: transform 0.2s cubic-bezier(0.34, 1.56, 0.64, 1), box-shadow 0.2s ease;
+  position: relative;
+}
+
+.lydia-fab-btn:hover {
+  transform: scale(1.08);
+  box-shadow: 0 12px 30px rgba(5, 150, 105, 0.5);
+}
+
+.lydia-fab-online-dot {
+  position: absolute;
+  top: 2px;
+  right: 2px;
+  width: 14px;
+  height: 14px;
+  border-radius: 50%;
+  background: #22c55e;
+  border: 2px solid #ffffff;
+}
+
+@keyframes lydiaFadeSlide {
+  from { opacity: 0; transform: translateX(10px); }
+  to { opacity: 1; transform: translateX(0); }
+}
+
+/* ---------------------------------------------------------------------
+   7. SLIDE-OVER CONCIERGE DRAWER (Modal / Floating Drawer)
+   --------------------------------------------------------------------- */
+.lydia-drawer-overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(15, 23, 42, 0.45);
+  backdrop-filter: blur(4px);
+  z-index: 1000;
+  display: flex;
+  justify-content: flex-end;
+  animation: lydiaFadeIn 0.2s ease;
+}
+
+.lydia-drawer-content {
+  width: 520px;
+  max-width: 100%;
+  height: 100%;
+  background: #ffffff;
+  box-shadow: -8px 0 32px rgba(15, 23, 42, 0.2);
+  display: flex;
+  flex-direction: column;
+  animation: lydiaSlideLeft 0.25s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.lydia-drawer-close {
+  background: transparent;
+  border: none;
+  color: #94a3b8;
+  font-size: 1.3rem;
+  cursor: pointer;
+  padding: 4px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 6px;
+  transition: color 0.15s ease;
+}
+
+.lydia-drawer-close:hover {
+  color: #ffffff;
+}
+
+@keyframes lydiaFadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+@keyframes lydiaSlideLeft {
+  from { transform: translateX(100%); }
+  to { transform: translateX(0); }
+}
